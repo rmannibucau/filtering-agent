@@ -1,0 +1,37 @@
+= Filtering Agent
+
+Prevent some classes to be loaded through a javaagent.
+It avoids to set a security manager on the JVM when not possible or desired - because it will impact more than just the classloading or because custom classloaders don't use the security manager.
+
+== Configuration
+
+
+Configuration is passed to the runtime using `key1=value1|key2=value2` syntax.
+Supported keys are:
+
+[opts="header"]
+|====
+|Key|Description
+|include|set of rules which will trigger a class to not be instantiable.
+|exclude|set of rules which will trigger a class to be instantiable.
+|order|allows to determine if include wins over exclude or not, values can respectively be `include-exclude` or `exclude-include`.
+|====
+
+A rule is a value with a potential prefix.
+If no prefix is set the rule if of type `prefix`.
+The supported prefixes are:
+
+[opts="header"]
+|====
+|Prefix|Description
+|prefix|This will test the value with a `startsWith` logic.
+|regex|This will test the value with a java `Pattern` logic.
+|====
+
+
+Example:
+
+[source,sh]
+----
+-javaagent:/tmp/filtering-agent-${version}-shaded.jar=include=org.company
+----
