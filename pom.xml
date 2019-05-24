@@ -4,7 +4,7 @@
 
   <groupId>com.github.rmannibucau</groupId>
   <artifactId>filtering-agent</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <name>Filtering Agent</name>
   <description>Runs on a JVM to prevent some class code to be executed.</description>
   <url>https://github.com/rmannibucau/filtering-agent</url>
@@ -150,7 +150,7 @@
     <connection>scm:git:https://github.com/rmannibucau/filtering-agent.git</connection>
     <developerConnection>scm:git:https://github.com/rmannibucau/filtering-agent.git</developerConnection>
     <url>https://github.com/rmannibucau/filtering-agent</url>
-    <tag>HEAD</tag>
+    <tag>filtering-agent-1.0.1</tag>
   </scm>
 
   <distributionManagement>
