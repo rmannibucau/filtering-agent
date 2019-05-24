@@ -83,6 +83,7 @@ class FilteringTransformer implements ClassFileTransformer {
     @Override
     public byte[] transform(final ClassLoader loader, final String className,
                             final Class<?> classBeingRedefined, final ProtectionDomain protectionDomain,
+
                             final byte[] classfileBuffer) throws IllegalClassFormatException {
         if (className == null || matcher == null) {
             return classfileBuffer;
